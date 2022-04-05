@@ -1,5 +1,7 @@
 package breakout;
 
+import java.awt.Color;
+
 /**
  * Represents the state of a ball in the breakout game.
  * 
@@ -7,10 +9,12 @@ package breakout;
  * @invar | getLocation() != null
  * @invar | getVelocity() != null
  */
-public class BallState {
+public abstract class Ball {
 	
-	private final Circle location;
-	private final Vector velocity;
+	public abstract Ball hitBlock(Rect rect, boolean destroyed);
+	
+	private Circle location;
+	private Vector velocity;
 	
 	/**
 	 * Construct a new ball at a given `location`, with a given `velocity`.
@@ -20,7 +24,7 @@ public class BallState {
 	 * @post | getLocation() == location
 	 * @post | getVelocity().equals(velocity) 
 	 */
-	public BallState(Circle location, Vector velocity) {
+	public Ball(Circle location, Vector velocity) {
 		this.location = location;
 		this.velocity = velocity;
 	}
@@ -64,4 +68,45 @@ public class BallState {
 	public Point getCenter() {
 		return getLocation().getCenter();
 	}
+
+	public Color getColor() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	public void setLocation(Circle location) {
+		this.location= location;
+	}
+	public void setVelocity(Vector velocity) {
+		this.velocity= velocity;
+	}
+	
+	
+}
+class NormalBall extends Ball{
+
+	public NormalBall(Circle location, Vector velocity) {
+		super(location, velocity);
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public Ball hitBlock(Rect rect, boolean destroyed) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+}
+class SuperChargedBall extends Ball{
+
+	public SuperChargedBall(Circle location, Vector velocity) {
+		super(location, velocity);
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public Ball hitBlock(Rect rect, boolean destroyed) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
 }

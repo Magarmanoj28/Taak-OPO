@@ -27,11 +27,11 @@ public class GameMap {
 		Point center = bottomLeft.plus(size);
 		return new PaddleState(center);
 	}
-	private static BallState createBall(Point bottomLeft) {
+	private static Ball createBall(Point bottomLeft) {
 		Vector centerD = new Vector(WIDTH/BLOCK_COLUMNS/2,HEIGHT/BLOCK_LINES/2);
 		Point center = bottomLeft.plus(centerD);
 		int diameter = INIT_BALL_DIAMETER;
-		return new BallState(new Circle(center,diameter),INIT_BALL_VELOCITY);
+		return new Ball(new Circle(center,diameter),INIT_BALL_VELOCITY);
 	}
 	
 	/**
@@ -46,7 +46,7 @@ public class GameMap {
 		Vector unitVecDown = new Vector(0,HEIGHT/BLOCK_LINES);
 		BlockState[] blocks = new BlockState[BLOCK_COLUMNS*BLOCK_LINES];
 		int nblock = 0;
-		BallState[] balls = new BallState[BLOCK_COLUMNS*BLOCK_LINES];
+		Ball[] balls = new Ball[BLOCK_COLUMNS*BLOCK_LINES];
 		int nball = 0;
 		PaddleState paddle = null;
 		
@@ -67,7 +67,7 @@ public class GameMap {
 		}
 		Point topRight = new Point(WIDTH, HEIGHT);
 		
-		return new BreakoutState(Arrays.stream(balls).filter(x -> x != null).toArray(BallState[]::new),
+		return new BreakoutState(Arrays.stream(balls).filter(x -> x != null).toArray(Ball[]::new),
 								 Arrays.stream(blocks).filter(x -> x != null).toArray(BlockState[]::new),
 								 topRight, paddle);
 	}
