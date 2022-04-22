@@ -19,7 +19,7 @@ public class BreakoutFacade {
 		return null;
 	}
 
-	public BreakoutState createBreakoutState(Ball[] balls, BlockState[] blocks, Point topRight,
+	public BreakoutState createBreakoutState(Ball[] balls, BlockState[] blocks, Point bottomRight,
 			PaddleState paddle) {
 		// TODO
 		return null;
