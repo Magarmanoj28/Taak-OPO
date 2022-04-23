@@ -1,6 +1,7 @@
 package breakout;
 
 import java.awt.Color;
+import java.awt.SystemColor;
 import java.util.Arrays;
 
 //No documentation required for this class
@@ -53,41 +54,42 @@ public class BreakoutFacade {
 
 	public Color getColor(PaddleState paddle) {
 		// TODO
-		return null;
+		return SystemColor.cyan;
 	}
 
 	public Color getColor(Ball ball) {
 		// TODO
-		return null;
+	
+		return SystemColor.blue;
 	}
 
 	public Rect getLocation(PaddleState paddle) {
 		// TODO
-		return null;
+		return paddle.getLocation();
 	}
 
 	public Point getCenter(Ball ball) {
 		// TODO
-		return null;
+		return ball.getCenter();
 	}
 
 	public int getDiameter(Ball ball) {
 		// TODO
-		return -1;
+		return ball.getLocation().getDiameter();
 	}
 
 	public Ball[] getBalls(BreakoutState breakoutState) {
 		// TODO
-		return null;
+		return breakoutState.getBalls();
 	}
 
 	public Color getColor(BlockState block) {
 		// TODO
-		return null;
+		return SystemColor.red;
 	}
 
 	public Rect getLocation(BlockState block) {
 		// TODO
-		return null;
+		return block.getLocation();
 	}
 }
