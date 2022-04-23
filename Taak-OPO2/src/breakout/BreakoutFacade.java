@@ -32,22 +32,23 @@ public class BreakoutFacade {
 
 	public BlockState createNormalBlockState(Point topLeft, Point bottomRight) {
 		// TODO
-		return new BlockState(new Rect(topLeft, bottomRight));
+		return new NormalBlockState(new Rect(topLeft, bottomRight));
 	}
 
 	public BlockState createSturdyBlockState(Point topLeft, Point bottomRight, int i) {
 		// TODO
+		//return new SturdyBlockState(new Rect(topLeft, bottomRight),i);
 		return null;
 	}
 
 	public BlockState createReplicatorBlockState(Point topLeft, Point bottomRight) {
 		// TODO
-		return null;
+		return new ReplicatorBlockState(new Rect(topLeft, bottomRight));
 	}
 
 	public BlockState createPowerupBallBlockState(Point topLeft, Point bottomRight) {
 		// TODO
-		return null;
+		return new PowerupBallBlockState(new Rect(topLeft, bottomRight));
 	}
 
 	public Color getColor(PaddleState paddle) {

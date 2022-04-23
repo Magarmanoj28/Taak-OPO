@@ -6,7 +6,7 @@ package breakout;
  * @immutable
  * @invar | getLocation() != null
  */
-public class BlockState {
+public abstract class BlockState {
 	
 	/**
 	 * @invar | location != null
@@ -30,3 +30,37 @@ public class BlockState {
 	}
 	
 }
+class NormalBlockState extends BlockState{
+
+	public NormalBlockState(Rect location) {
+		super(location);
+		// TODO Auto-generated constructor stub
+	}
+	
+}
+class SturdyBlockState extends BlockState{
+
+	public SturdyBlockState(Rect location) {
+		super(location);
+		// TODO Auto-generated constructor stub
+	}
+	
+}
+class ReplicatorBlockState extends BlockState{
+
+	public ReplicatorBlockState(Rect location) {
+		super(location);
+		// TODO Auto-generated constructor stub
+	}
+	
+}
+class PowerupBallBlockState extends BlockState{
+
+	public PowerupBallBlockState(Rect location) {
+		super(location);
+		// TODO Auto-generated constructor stub
+	}
+	
+}
+
+
