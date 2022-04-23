@@ -1,5 +1,8 @@
 package breakout;
 
+import java.awt.Color;
+import java.awt.SystemColor;
+
 /**
  * Represents the state of a paddle in the breakout game.
  *
@@ -29,6 +32,10 @@ public class PaddleState {
 	 */
 	public Point getCenter() {
 		return center;
+	}
+	public Color getColor() {
+		return SystemColor.cyan;
+	
 	}
 
 	/**

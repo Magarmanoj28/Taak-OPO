@@ -176,7 +176,7 @@ public class BreakoutState {
 		return ball;
 	}
 
-	private void removeBlock(BlockState block) {
+	public void removeBlock(BlockState block) {
 		ArrayList<BlockState> nblocks = new ArrayList<BlockState>();
 		for( BlockState b : blocks ) {
 			if(b != block) {

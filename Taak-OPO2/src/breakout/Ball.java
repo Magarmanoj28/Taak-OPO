@@ -1,6 +1,7 @@
 package breakout;
 
 import java.awt.Color;
+import java.awt.SystemColor;
 
 /**
  * Represents the state of a ball in the breakout game.
@@ -71,7 +72,7 @@ public abstract class Ball {
 
 	public Color getColor() {
 		// TODO Auto-generated method stub
-		return null;
+		return SystemColor.MAGENTA;
 	}
 	public void setLocation(Circle location) {
 		this.location= location;
@@ -98,7 +99,7 @@ class NormalBall extends Ball{
 }
 class SuperChargedBall extends Ball{
 
-	public SuperChargedBall(Circle location, Vector velocity) {
+	public SuperChargedBall(Circle location, Vector velocity, int lifetime) {
 		super(location, velocity);
 		// TODO Auto-generated constructor stub
 	}
