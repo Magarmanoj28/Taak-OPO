@@ -1,33 +1,38 @@
 package breakout;
 
 import java.awt.Color;
+import java.util.Arrays;
 
 //No documentation required for this class
 public class BreakoutFacade {
 	public PaddleState createNormalPaddleState(Point center) {
 		// TODO
-		return null;
+		return new PaddleState(center);
 	}
 
 	public Ball createNormalBall(Point center, int diameter, Vector initBallVelocity) {
 		// TODO
-		return null;
+		return new NormalBall(new Circle(center, diameter), initBallVelocity);
 	}
 
 	public Ball createSuperchargedBall(Point center, int diameter, Vector initBallVelocity, int lifetime) {
+		
 		// TODO
+		// new SuperChargedBall(new Circle(center, diameter), initBallVelocity, lifetime);//
 		return null;
 	}
 
 	public BreakoutState createBreakoutState(Ball[] balls, BlockState[] blocks, Point bottomRight,
 			PaddleState paddle) {
 		// TODO
-		return null;
+		return new BreakoutState(Arrays.stream(balls).filter(x -> x != null).toArray(Ball[]::new),
+				 Arrays.stream(blocks).filter(x -> x != null).toArray(BlockState[]::new),
+				 bottomRight, paddle);
 	}
 
 	public BlockState createNormalBlockState(Point topLeft, Point bottomRight) {
 		// TODO
-		return null;
+		return new BlockState(new Rect(topLeft, bottomRight));
 	}
 
 	public BlockState createSturdyBlockState(Point topLeft, Point bottomRight, int i) {

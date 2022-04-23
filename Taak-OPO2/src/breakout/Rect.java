@@ -66,10 +66,10 @@ public class Rect {
 	//  * @post | result == (getTopLeft().plus(new Vector(loc.getDiameter(),loc.getDiameter())).isUpAndLeftFrom(getBottomRight()) &&
 	//  * 		 |				minusMargin(loc.getRadius()).contains(loc.getCenter()))
 	//  */
-	// public boolean contains(Circle loc) {
-	// 	return getTopLeft().plus(new Vector(loc.getDiameter(),loc.getDiameter())).isUpAndLeftFrom(getBottomRight()) &&
-	// 			minusMargin(loc.getRadius()).contains(loc.getCenter());
-	// }
+	 public boolean contains(Circle loc) {
+	 	return getTopLeft().plus(new Vector(loc.getDiameter(),loc.getDiameter())).isUpAndLeftFrom(getBottomRight()) &&
+	 			minusMargin(loc.getRadius()).contains(loc.getCenter());
+	 }
 
 	/**
 	 * Return whether this rectangle contains a given other rectangle.
@@ -89,15 +89,15 @@ public class Rect {
 	//  * @pre | ball != null
 	//  * @post | result == null || (result.getSquareLength() == 1 && this.contains(ball.getOutermostPoint(result)))
 	//  */
-	// public Vector collideWith(Circle ball) {
-	// 	for (Vector coldir : COLLISSION_DIRS) {
-	// 		Point c = ball.getOutermostPoint(coldir);
-	// 		if(contains(c)) {
-	// 			return coldir;
-	// 		}
-	// 	}
-	// 	return null;
-	// }
+	 public Vector collideWith(Circle ball) {
+	 	for (Vector coldir : COLLISSION_DIRS) {
+	 		Point c = ball.getOutermostPoint(coldir);
+	 		if(contains(c)) {
+	 			return coldir;
+	 		}
+	 	}
+	 	return null;
+	 }
 
 	/**
 	 * Return the rectangle obtained by subtracting an inner margin from all sides of this rectangle.
@@ -182,9 +182,9 @@ public class Rect {
 	//  * @post | contains(result)
 	//  * @post | result.getCenter().equals(this.minusMargin(c.getRadius()).constrain(c.getCenter()))
 	//  */
-	// public Circle constrain(Circle c) {
-	// 	Rect r = this.minusMargin(c.getRadius());
-	// 	Point nc = r.constrain(c.getCenter());
-	// 	return new Circle(nc,c.getDiameter());
-	// }
+	 public Circle constrain(Circle c) {
+	 	Rect r = this.minusMargin(c.getRadius());
+	 	Point nc = r.constrain(c.getCenter());
+	 	return new Circle(nc,c.getDiameter());
+	 }
 }
