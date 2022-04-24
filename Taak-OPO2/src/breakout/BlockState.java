@@ -52,8 +52,7 @@ class NormalBlockState extends BlockState{
 }
 class SturdyBlockState extends BlockState{
 	
-	int i;
-	public SturdyBlockState[] blocks;
+	private int hp;
 
 	public SturdyBlockState(Rect location, int i) {
 		super(location);
@@ -63,7 +62,16 @@ class SturdyBlockState extends BlockState{
 	@Override
 	public Color getcolor() {
 		// TODO Auto-generated method stub
-		return SystemColor.blue;
+		int i = 3;
+		switch(i) {
+		case 1:
+			return SystemColor.red;
+		case 2:
+			return SystemColor.yellow;
+		case 3:
+			return SystemColor.blue;
+		}
+		return null;
 	}
 	
 }

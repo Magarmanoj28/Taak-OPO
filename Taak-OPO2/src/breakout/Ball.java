@@ -71,9 +71,11 @@ public abstract class Ball {
 	}
 
 	public Color getColor() {
-		// TODO Auto-generated method stub
 		return SystemColor.MAGENTA;
+		
 	}
+	
+	
 	public void setLocation(Circle location) {
 		this.location= location;
 	}
