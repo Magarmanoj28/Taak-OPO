@@ -160,11 +160,15 @@ public class BreakoutState {
 			Vector nspeed = ball.bounceOn(block.getLocation());
 			if(nspeed != null) {
 				removeBlock(block);
-				return new NormalBall(ball.getLocation(), nspeed);
+				return new SuperChargedBall(ball.getLocation(), nspeed,10);
 			}
 		}
 		return ball;
 	}
+
+	
+	
+	
 
 	private Ball collideBallPaddle(Ball ball, Vector paddleVel) {
 		Vector nspeed = ball.bounceOn(paddle.getLocation());

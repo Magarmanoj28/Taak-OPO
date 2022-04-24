@@ -2,6 +2,7 @@ package breakout;
 
 import java.awt.Color;
 import java.awt.SystemColor;
+import java.util.ArrayList;
 
 /**
  * Represents the state of a block in the breakout game.
@@ -35,73 +36,9 @@ public abstract class BlockState {
 	}
 	
 	
-}
-class NormalBlockState extends BlockState{
-
-	public NormalBlockState(Rect location) {
-		super(location);
-		// TODO Auto-generated constructor stub
-	}
-
-	@Override
-	public Color getcolor() {
-		// TODO Auto-generated method stub
-		return SystemColor.red;
-	}
 	
 }
-class SturdyBlockState extends BlockState{
-	
-	private int hp;
 
-	public SturdyBlockState(Rect location, int i) {
-		super(location);
-		// TODO Auto-generated constructor stub
-	
-	}
-	@Override
-	public Color getcolor() {
-		// TODO Auto-generated method stub
-		int i = 3;
-		switch(i) {
-		case 1:
-			return SystemColor.red;
-		case 2:
-			return SystemColor.yellow;
-		case 3:
-			return SystemColor.blue;
-		}
-		return null;
-	}
-	
-}
-class ReplicatorBlockState extends BlockState{
 
-	public ReplicatorBlockState(Rect location) {
-		super(location);
-		// TODO Auto-generated constructor stub
-	
-	}
-	@Override
-	public Color getcolor() {
-		// TODO Auto-generated method stub
-		return SystemColor.orange;
-	}
-	
-}
-class PowerupBallBlockState extends BlockState{
-
-	public PowerupBallBlockState(Rect location) {
-		super(location);
-		// TODO Auto-generated constructor stub
-	}
-
-	@Override
-	public Color getcolor() {
-		// TODO Auto-generated method stub
-		return SystemColor.white;
-	}
-	
-}
 
 

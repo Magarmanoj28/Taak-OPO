@@ -85,31 +85,4 @@ public abstract class Ball {
 	
 	
 }
-class NormalBall extends Ball{
 
-	public NormalBall(Circle location, Vector velocity) {
-		super(location, velocity);
-		// TODO Auto-generated constructor stub
-	}
-
-	@Override
-	public Ball hitBlock(Rect rect, boolean destroyed) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	
-}
-class SuperChargedBall extends Ball{
-
-	public SuperChargedBall(Circle location, Vector velocity, int lifetime) {
-		super(location, velocity);
-		// TODO Auto-generated constructor stub
-	}
-
-	@Override
-	public Ball hitBlock(Rect rect, boolean destroyed) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	
-}
