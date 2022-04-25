@@ -168,6 +168,9 @@ public class BreakoutState {
 					block.setColor();
 				}else if(colorblue==0 && colorred==255 && colorgreen==255) {
 					block.setColor();
+				}else if(colorblue==255 && colorred==255 && colorgreen==255){
+					System.out.println("lol");
+					block.setColor();
 				}else {
 				removeBlock(block);
 				}
