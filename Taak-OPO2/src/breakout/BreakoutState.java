@@ -18,8 +18,9 @@ import java.util.Objects;
  */
 public class BreakoutState {
 
-	private static final Vector PADDLE_VEL = new Vector(10,0);
+	private static final Vector PADDLE_VEL = new Vector(400,0);
 	public static int MAX_ELAPSED_TIME;
+	
 	/**
 	 * @invar | bottomRight != null
 	 * @invar | Point.ORIGIN.isUpAndLeftFrom(bottomRight)
@@ -47,6 +48,7 @@ public class BreakoutState {
 	private final Rect rightWall;
 	private final Rect leftWall;
 	private final Rect[] walls;
+	
 
 	/**
 	 * Construct a new BreakoutState with the given balls, blocks, paddle.
@@ -159,14 +161,22 @@ public class BreakoutState {
 		for(BlockState block : blocks) {
 			Vector nspeed = ball.bounceOn(block.getLocation());
 			if(nspeed != null) {
+				int colorblue = block.getcolor().getBlue();
+				int colorred = block.getcolor().getRed();
+				int colorgreen = block.getcolor().getGreen();
+				if(colorblue==255 && colorred==0 && colorgreen==0) {
+					block.setColor();
+				}else if(colorblue==0 && colorred==255 && colorgreen==255) {
+					block.setColor();
+				}else {
 				removeBlock(block);
-				return new SuperChargedBall(ball.getLocation(), nspeed,10);
+				}
+				System.out.println("print");
+				return new NormalBall(ball.getLocation(), nspeed);
 			}
 		}
 		return ball;
 	}
-
-	
 	
 	
 

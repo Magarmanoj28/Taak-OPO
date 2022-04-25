@@ -16,5 +16,12 @@ public class PowerupBallBlockState extends BlockState {
 		return SystemColor.white;
 	}
 
+	@Override
+	public void setColor() {
+		// TODO Auto-generated method stub
+		getcolor();
+		
+	}
+
 }
 

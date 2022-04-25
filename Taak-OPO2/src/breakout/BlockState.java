@@ -13,6 +13,7 @@ import java.util.ArrayList;
 public abstract class BlockState {
 	
 	public abstract Color getcolor();
+	public abstract void setColor();
 	
 	/**
 	 * @invar | location != null

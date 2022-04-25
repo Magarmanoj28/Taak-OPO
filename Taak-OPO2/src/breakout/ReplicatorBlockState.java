@@ -15,6 +15,12 @@ public class ReplicatorBlockState extends BlockState {
 		// TODO Auto-generated method stub
 		return SystemColor.orange;
 	}
+
+	@Override
+	public void setColor() {
+		// TODO Auto-generated method stub
+		
+	}
 		
 }
 

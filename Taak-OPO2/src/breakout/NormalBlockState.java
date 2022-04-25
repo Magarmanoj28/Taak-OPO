@@ -15,4 +15,10 @@ public class NormalBlockState extends BlockState {
 		return SystemColor.red;
 	}
 
+	@Override
+	public void setColor() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

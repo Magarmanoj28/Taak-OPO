@@ -5,6 +5,7 @@ import java.awt.SystemColor;
 
 public class SturdyBlockState extends BlockState {
 	
+	int index=3;
 	public SturdyBlockState(Rect location, int i) {
 		super(location);
 		// TODO Auto-generated constructor stub
@@ -12,8 +13,8 @@ public class SturdyBlockState extends BlockState {
 	@Override
 	public Color getcolor() {
 		// TODO Auto-generated method stub
-		int i = 3;
-		switch(i) {
+		
+		switch(index) {
 		case 1:
 			return SystemColor.red;
 		case 2:
@@ -23,6 +24,15 @@ public class SturdyBlockState extends BlockState {
 		}
 		return null;
 	}
+	@Override
+	public void setColor() {
+		index--;
+		//getcolor();
+	
+		
+	}
+	
+	
 		
 }
 
