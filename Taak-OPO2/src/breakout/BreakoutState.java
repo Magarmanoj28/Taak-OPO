@@ -165,16 +165,25 @@ public class BreakoutState {
 				int colorred = block.getcolor().getRed();
 				int colorgreen = block.getcolor().getGreen();
 				if(colorblue==255 && colorred==0 && colorgreen==0) {
+					System.out.println("blue");
 					block.setColor();
+					block.TypeBall(ball, ball.getLocation(), nspeed);
 				}else if(colorblue==0 && colorred==255 && colorgreen==255) {
+					System.out.println("yellow");
 					block.setColor();
+					block.TypeBall(ball, ball.getLocation(), nspeed);
 				}else if(colorblue==255 && colorred==255 && colorgreen==255){
-					System.out.println("lol");
-					block.setColor();
+					System.out.println("white");				
+					removeBlock(block);
+					block.TypeBall(ball, ball.getLocation(), nspeed);
+				}else if(colorblue==0 && colorred==0 && colorgreen==255){
+					System.out.println("yelloiw");				
+					removeBlock(block);
+					block.TypeBall(ball, ball.getLocation(), nspeed);
+					
 				}else {
 				removeBlock(block);
 				}
-				System.out.println("print");
 				return new NormalBall(ball.getLocation(), nspeed);
 			}
 		}

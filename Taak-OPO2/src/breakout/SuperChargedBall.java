@@ -4,12 +4,13 @@ public class SuperChargedBall extends Ball{
 
 	public SuperChargedBall(Circle location, Vector velocity, int i) {
 		super(location, velocity);
-		print();
 		
 		// TODO Auto-generated constructor stub
 	}
-	public void print() {
-		System.out.println("tere");
+	public Ball Super(Ball ball,Circle location, Vector velocity, int i) {
+		
+		return ball;
+
 	}
 
 	@Override

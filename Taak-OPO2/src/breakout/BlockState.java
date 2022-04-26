@@ -14,7 +14,7 @@ public abstract class BlockState {
 	
 	public abstract Color getcolor();
 	public abstract void setColor();
-	
+	public abstract Ball TypeBall(Ball balls, Circle location, Vector velocity);
 	/**
 	 * @invar | location != null
 	 */

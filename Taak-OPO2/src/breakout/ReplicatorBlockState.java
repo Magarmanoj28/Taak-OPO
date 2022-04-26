@@ -13,7 +13,7 @@ public class ReplicatorBlockState extends BlockState {
 	@Override
 	public Color getcolor() {
 		// TODO Auto-generated method stub
-		return SystemColor.orange;
+		return SystemColor.green;
 	}
 
 	@Override
@@ -21,7 +21,17 @@ public class ReplicatorBlockState extends BlockState {
 		// TODO Auto-generated method stub
 		
 	}
-		
+
+	@Override
+	public Ball TypeBall(Ball balls, Circle location, Vector velocity) {
+		balls.bounceOn(getLocation());
+		return new NormalBall(location,velocity);
+	}
+
+
+	
+
+
 }
 
 

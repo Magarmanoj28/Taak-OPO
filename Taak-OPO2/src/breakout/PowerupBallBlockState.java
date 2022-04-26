@@ -19,9 +19,20 @@ public class PowerupBallBlockState extends BlockState {
 	@Override
 	public void setColor() {
 		// TODO Auto-generated method stub
-		getcolor();
 		
 	}
+
+	@Override
+	public Ball TypeBall(Ball balls, Circle location, Vector velocity) {
+		// TODO Auto-generated method stub
+		balls.bounceOn(getLocation());
+		return new SuperChargedBall(location,velocity, 10);
+		
+	}
+
+
+
+
 
 }
 
