@@ -14,6 +14,14 @@ public class NormalBall extends Ball {
 	@Override
 	public Ball hitBlock(Rect rect, boolean destroyed) {
 		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+
+	/*@Override
+	/*public Ball hitBlock(Rect rect, boolean destroyed) {
+		// TODO Auto-generated method stub
 		BreakoutState r = new BreakoutState(balls, blocks, bottomRight, paddle);
 		for(int i =0; i < r.getBalls().length; ++i) {
 			if(r.getBalls()[i]!= null) {
@@ -36,6 +44,6 @@ public class NormalBall extends Ball {
 			return new NormalBall(ball.getLocation(),rs);
 		}
 		return ball;
-	}
+	}*/
 
 }

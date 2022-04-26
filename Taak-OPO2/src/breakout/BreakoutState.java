@@ -21,6 +21,8 @@ public class BreakoutState {
 	private static final Vector PADDLE_VEL = new Vector(400,0);
 	public static int MAX_ELAPSED_TIME;
 	
+	public float index=0;
+	public boolean whitehit = false;
 	/**
 	 * @invar | bottomRight != null
 	 * @invar | Point.ORIGIN.isUpAndLeftFrom(bottomRight)
@@ -158,8 +160,22 @@ public class BreakoutState {
 	}
 	
 	private Ball collideBallBlocks(Ball ball) {
+		if(whitehit) {
+			index+=0.03;
+			System.out.println("charged:  "  + index);
+		}
+		
 		for(BlockState block : blocks) {
-			Vector nspeed = ball.bounceOn(block.getLocation());
+			Vector nspeed = ball.bounceOn(block.getLocation());						
+				if(index>=10) {
+					whitehit = false;
+					index = 0;
+					BreakoutFacade r = new BreakoutFacade();
+					Vector r1 = new Vector(70,90);
+					nspeed = r1;
+					ball = r.createNormalBall(ball.getCenter(), 700, nspeed);
+					System.out.println("finishedcharged");
+				}
 			if(nspeed != null) {
 				int colorblue = block.getcolor().getBlue();
 				int colorred = block.getcolor().getRed();
@@ -167,24 +183,36 @@ public class BreakoutState {
 				if(colorblue==255 && colorred==0 && colorgreen==0) {
 					System.out.println("blue");
 					block.setColor();
-					block.TypeBall(ball, ball.getLocation(), nspeed);
+					//block.TypeBall(ball, ball.getLocation(), nspeed);
+					//return new NormalBall(ball.getLocation(), nspeed);
 				}else if(colorblue==0 && colorred==255 && colorgreen==255) {
 					System.out.println("yellow");
 					block.setColor();
-					block.TypeBall(ball, ball.getLocation(), nspeed);
+					//block.TypeBall(ball, ball.getLocation(), nspeed);
+					//return new NormalBall(ball.getLocation(), nspeed);
 				}else if(colorblue==255 && colorred==255 && colorgreen==255){
-					System.out.println("white");				
+					System.out.println("white");
 					removeBlock(block);
-					block.TypeBall(ball, ball.getLocation(), nspeed);
+					BreakoutFacade r = new BreakoutFacade();
+					Vector r1 = new Vector(80,100);
+					nspeed = r1;
+					ball = r.createSuperchargedBall(ball.getCenter(), 700, nspeed, 4);
+					//block.TypeBall(ball, ball.getLocation(), nspeed);
+					whitehit = true;
+				
 				}else if(colorblue==0 && colorred==0 && colorgreen==255){
 					System.out.println("green");				
 					removeBlock(block);
-					block.TypeBall(ball, ball.getLocation(), nspeed);
+					//block.TypeBall(ball, ball.getLocation(), nspeed);
 					
 				}else {
 				removeBlock(block);
+				//return new NormalBall(ball.getLocation(), nspeed);
 				}
-				return new NormalBall(ball.getLocation(), nspeed);
+				if(ball.getVelocity().getX() > 80) {
+					return new NormalBall(ball.getLocation(), nspeed);
+				}
+				
 			}
 		}
 		return ball;
