@@ -24,7 +24,8 @@ public class NormalBlockState extends BlockState {
 	@Override
 	public Ball TypeBall(Ball balls, Circle location, Vector velocity) {
 		balls.bounceOn(getLocation());
-		return new NormalBall(location,velocity);
+		NormalBall r = new NormalBall(location,velocity);
+		return r.hitBlock(getLocation(), false);
 	}
 
 }

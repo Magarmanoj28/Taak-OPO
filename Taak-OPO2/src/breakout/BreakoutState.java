@@ -177,7 +177,7 @@ public class BreakoutState {
 					removeBlock(block);
 					block.TypeBall(ball, ball.getLocation(), nspeed);
 				}else if(colorblue==0 && colorred==0 && colorgreen==255){
-					System.out.println("yelloiw");				
+					System.out.println("green");				
 					removeBlock(block);
 					block.TypeBall(ball, ball.getLocation(), nspeed);
 					
