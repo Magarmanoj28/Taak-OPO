@@ -22,15 +22,7 @@ public class PowerupBallBlockState extends BlockState {
 		
 	}
 
-	@Override
-	public Ball TypeBall(Ball balls, Circle location, Vector velocity) {
-		// TODO Auto-generated method stub
-		balls.bounceOn(getLocation());
-		SuperChargedBall r = new SuperChargedBall(location,velocity,10);
-		return r.hitBlock(getLocation(), false);
-		
-	}
-
+	
 
 
 

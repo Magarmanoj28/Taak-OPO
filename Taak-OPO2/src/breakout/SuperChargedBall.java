@@ -2,6 +2,7 @@ package breakout;
 
 public class SuperChargedBall extends Ball{
 	
+	
 	public SuperChargedBall(Circle location, Vector velocity, int i) {
 		super(location, velocity);
 		
@@ -11,8 +12,7 @@ public class SuperChargedBall extends Ball{
 
 	@Override
 	public Ball hitBlock(Rect rect, boolean destroyed) {
-		
-		// TODO Auto-generated method stub
+
 		return null;
 	}
 	
